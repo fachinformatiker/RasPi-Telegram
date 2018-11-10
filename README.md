@@ -4,7 +4,18 @@ Proof of concept bot written by Patrick Szalewicz from Hochschule Bremen for his
 
 ### Features
 
+LED blinking!
+What time is it?
+Roll the dice!
 
+In my example I used four LEDs wired as following:
+
+- Red = GPIO 21
+- Yellow = GPIO 5
+- Green = GPIO 10
+- White = GPIO 27
+
+Please change the values in the scripts if you use other GPIO pins.
 
 ### Installation
 
@@ -14,6 +25,7 @@ This bot requires the following programs:
 - telepot
 - git
 - gpio (should be already installed on Raspbian)
+- nano (or any other text editor, like vim)
 
 every command should be issued using the 'sudo' command.
 It's easier to do the following once.
@@ -25,15 +37,25 @@ $ sudo su
 Install the dependencies before you install the bot:
 
 ```sh
-$ apt install python git
+$ apt install python git nano
 $ pip install telepot
 ```
 
 installing the bot:
 
 ```sh
-$ git clone 
-$ NODE_ENV=production node app
+$ git clone https://github.com/fachinformatiker/RasPi-Telegram
+$ cd RasPi-Telegram
+$ cp opt/* /opt/
+$ cd /opt
+$ chmod +x *
+```
+
+insert your token inside the bot file:
+`bot = telepot.Bot('INSERT YOUR BOT TOKEN HERE!')`
+
+```sh
+$ nano bot.py
 ```
 
 autorun at startup:
@@ -48,14 +70,13 @@ and insert the two lines from the crontab.txt file.
 
 Want to contribute? Great!
 
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
+Just clone the repo, add your changes and create a pull request.
+You can also create a new issue if you like or contact me via [e-mail](mailto:github@fachinformatiker.app).
 
 ### Todos
 
- - Write MORE Tests
- - Add Night Mode
+ - ~~beautify the code~~
+ - create a "real" config file
 
 ### License
 
