@@ -8,6 +8,8 @@ LED blinking!
 What time is it?
 Roll the dice!
 
+Special feature: Blink LED at startup if network is present or not.
+
 In my example I used four LEDs wired as following:
 
 - Red = GPIO 21
