@@ -1,0 +1,2 @@
+@reboot sleep 30 && sudo /opt/wifiLED.sh
+@reboot sleep 30 && sudo /usr/bin/python /opt/bot.py
