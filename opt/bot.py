@@ -13,12 +13,17 @@ GPIO.setup(27,GPIO.OUT)
 
 def handle(msg):
         chat_id = msg['chat']['id']
+        chat_firstname = msg['chat']['first_name']
         command = msg['text']
 
         print 'Got command: %s' % command
 
-        if command == '/roll':
+        if command == '/start':
+                bot.sendMessage(chat_id, "Hello *" + chat_firstname + "* you can send me one of the following commands: \n /red \n /yellow \n /green \n /white \n /kit \n /roll \n /time \n \n If you need more help, please visit my [GitHub Repo](https://github.com/fachinformatiker/RasPi-Telegram/)", "Markdown")
+
+        elif command == '/roll':
                 bot.sendMessage(chat_id, random.randint(1,6))
+
         elif command == '/time':
                 bot.sendMessage(chat_id, str(datetime.datetime.now()))
 
