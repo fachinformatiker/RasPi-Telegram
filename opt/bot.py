@@ -81,6 +81,7 @@ def handle(msg):
                         GPIO.output(5,GPIO.LOW)
                         time.sleep(0.1)
                         GPIO.output(21,GPIO.LOW)
+                        time.sleep(0.1)
                         count = count + 1
                 bot.sendMessage(chat_id, "Right away Michael.")
 
